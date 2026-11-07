@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEFORCE RTX 4090 — THE POWER WITHIN</title>
+<meta name="description" content="GeForce RTX 4090 インタラクティブ・プロダクト体験。開封からシステム起動、性能体験までをスクロールで辿る。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PROGRESS BAR ============ -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="siteNav">
+  <a href="#hero" class="nav__logo" data-scroll>
+    <span class="nav__logo-mark">RTX</span><span class="nav__logo-num">4090</span>
+  </a>
+  <nav class="nav__links" aria-label="セクションナビゲーション">
+    <a href="#unboxing" data-scroll>開封</a>
+    <a href="#build" data-scroll>組み込み</a>
+    <a href="#performance" data-scroll>性能</a>
+    <a href="#architecture" data-scroll>アーキテクチャ</a>
+    <a href="#raytracing" data-scroll>レイトレーシング</a>
+    <a href="#dlss" data-scroll>AI / DLSS</a>
+    <a href="#hardware" data-scroll>ハードウェア</a>
+    <a href="#gallery" data-scroll>ギャラリー</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__bg-img" data-img="heroBg"></div>
+      <div class="hero__fog"></div>
+      <div class="hero__grid"></div>
+      <canvas id="particleField" class="hero__particles"></canvas>
+      <div class="hero__vignette"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow"><span class="eyebrow__dot"></span>ADA LOVELACE ARCHITECTURE</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line hero__title-line--geforce">GEFORCE</span>
+        <span class="hero__title-line hero__title-line--rtx">RTX<span class="hero__title-num">4090</span></span>
+      </h1>
+      <p class="hero__sub">THE POWER WITHIN</p>
+      <p class="hero__desc">最高峰の24GB GDDR6X。Ada Lovelaceが解き放つ、これまでにない描画性能。<br>スクロールして、箱を開けるところから始めよう。</p>
+      <a href="#unboxing" class="btn btn--primary" data-scroll>開封を始める</a>
+
+      <ul class="hero__specs">
+        <li><span>24GB</span>GDDR6X</li>
+        <li><span>16,384</span>CUDA コア</li>
+        <li><span>Ada</span>Lovelace</li>
+        <li><span>DLSS 3</span>フレーム生成</li>
+      </ul>
+    </div>
+
+    <div class="hero__scrollcue" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="hero__scrollcue-line"><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ 01 UNBOXING (short pinned scroll-scrubbed) ============ -->
+  <section class="unbox" id="unboxing">
+    <div class="unbox__sticky">
+      <div class="unbox__bg">
+        <div class="unbox__bg-img" data-img="unboxBg"></div>
+        <div class="unbox__particles" id="unboxParticles"></div>
+      </div>
+
+      <p class="section-tag unbox__tag">01 — UNBOXING</p>
+
+      <div class="unbox__stage" id="unboxStage">
+        <div class="unbox__light" id="unboxLight"></div>
+
+        <div class="unbox__box" id="unboxBox">
+          <div class="unbox__box-lid" id="unboxLid">
+            <span class="unbox__box-brand">GEFORCE RTX™</span>
+            <span class="unbox__box-model">4090</span>
+          </div>
+          <div class="unbox__box-inner">
+            <div class="unbox__box-glow"></div>
+          </div>
+          <div class="unbox__box-front">
+            <span>GDDR6X 24GB</span>
+            <span>ADA LOVELACE</span>
+          </div>
+        </div>
+
+        <div class="gpu-card" id="unboxGpu">
+          <div class="gpu-card__body">
+            <div class="gpu-card__shroud">
+              <div class="gpu-card__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gpu-card__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gpu-card__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gpu-card__rgb"></div>
+              <div class="gpu-card__label">GEFORCE RTX 4090</div>
+            </div>
+            <div class="gpu-card__backplate"></div>
+            <div class="gpu-card__io">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="gpu-card__reflection"></div>
+
+          <ul class="gpu-card__specs" id="unboxSpecs">
+            <li>24 GB GDDR6X</li>
+            <li>16,384 CUDA コア</li>
+            <li>450W TGP</li>
+          </ul>
+        </div>
+
+        <p class="unbox__caption" id="unboxCaption">箱が、暗闇の中に浮かび上がる。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PC BUILD (short pinned) ============ -->
+  <section class="build" id="build">
+    <div class="build__sticky">
+      <div class="build__bg">
+        <div class="build__bg-img" data-img="buildBg"></div>
+        <div class="build__scanlines"></div>
+      </div>
+
+      <div class="section-head">
+        <p class="section-tag">02 — PC BUILD</p>
+        <h2 class="section-title">システムへ、組み込む。</h2>
+        <p class="section-desc">カメラが後退し、ケース内部が姿を現す。GPUがPCIeスロットへ静かに収まっていく。</p>
+      </div>
+
+      <div class="build__scene" id="buildScene">
+        <div class="build__case">
+          <div class="build__mobo">
+            <div class="build__cpu"><span>CPU</span></div>
+            <div class="build__ram"><span></span><span></span><span></span><span></span></div>
+            <div class="build__pcie" id="pcieSlot">
+              <div class="build__gpu-mini" id="buildGpu">
+                <div class="build__gpu-mini-fans"><span></span><span></span><span></span></div>
+                <div class="build__gpu-mini-strip"></div>
+              </div>
+            </div>
+            <div class="build__psu"><span>PSU · 1000W</span></div>
+            <div class="build__cooler"><span></span><span></span></div>
+            <div class="build__traces" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <figure class="build__photo-card" id="buildPhotoCard">
+          <div class="build__photo-img" data-img="gpuDetail1"></div>
+          <figcaption>参考写真 — 実機GPUクローズアップ<br><span>※ RTX 4090の公式パッケージ写真ではありません</span></figcaption>
+        </figure>
+
+        <div class="build__click-tag" id="buildClickTag">PCIe LOCKED — カチッ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03+04 POWER → MONITOR (merged, short pinned) ============ -->
+  <section class="connect" id="connect">
+    <div class="connect__sticky">
+      <div class="connect__bg" data-img="connectBg"></div>
+
+      <p class="section-tag connect__tag" id="connectTag">03 — POWER</p>
+
+      <div class="connect__scene">
+        <!-- power stage -->
+        <div class="power__scene" id="powerScene">
+          <svg class="power__cable" viewBox="0 0 900 400" preserveAspectRatio="none" aria-hidden="true">
+            <path id="cablePath" d="M -20 40 C 220 40, 180 260, 420 260 S 700 90, 900 200" fill="none" stroke="url(#cableGrad)" stroke-width="10" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="cableGrad" x1="0" x2="1">
+                <stop offset="0" stop-color="#1c2420"/>
+                <stop offset="1" stop-color="#9FE870"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="power__connector" id="powerConnector"></div>
+          <div class="power__tag" id="powerTag">POWER CONNECTED</div>
+        </div>
+
+        <!-- monitor stage -->
+        <div class="monitor__scene" id="monitorScene">
+          <div class="monitor__frame">
+            <div class="monitor__screen" id="monitorScreen">
+              <div class="monitor__screen-glow"></div>
+              <div class="monitor__screen-grid"></div>
+              <div class="monitor__screen-text">SYSTEM READY</div>
+            </div>
+            <div class="monitor__stand"></div>
+          </div>
+          <svg class="monitor__cable" viewBox="0 0 500 200" preserveAspectRatio="none" aria-hidden="true">
+            <path id="dpCablePath" d="M -20 180 C 120 180, 160 40, 320 40 S 460 100, 520 100" fill="none" stroke="#3a4a3f" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="connect__caption" id="connectCaption">電源ケーブルが、GPUへ伸びてゆく。</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 SYSTEM BOOT ============ -->
+  <section class="boot" id="boot">
+    <div class="boot__bg">
+      <div class="boot__bg-img" data-img="bootBg"></div>
+      <div class="boot__circuits" id="bootCircuits"></div>
+    </div>
+    <div class="boot__content">
+      <p class="section-tag section-tag--center">06 — SYSTEM BOOT</p>
+      <h2 class="boot__title">GPU × PC × ディスプレイ。<br>すべてが、ひとつに連動する。</h2>
+      <div class="boot__pulse-row">
+        <div class="boot__pulse"><span>GPU</span></div>
+        <div class="boot__pulse-line"></div>
+        <div class="boot__pulse"><span>SYSTEM</span></div>
+        <div class="boot__pulse-line"></div>
+        <div class="boot__pulse"><span>DISPLAY</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 PERFORMANCE ============ -->
+  <section class="perf" id="performance">
+    <div class="perf__bg"></div>
+    <div class="section-head">
+      <p class="section-tag">07 — PERFORMANCE</p>
+      <h2 class="section-title">数字が、そのままビジュアルになる。</h2>
+      <p class="section-desc">GeForce RTX 4090（Founders Edition）の公表スペック。</p>
+    </div>
+    <div class="perf__grid">
+      <div class="perf__stat">
+        <div class="perf__num" data-count-to="24" data-suffix=" GB">0 GB</div>
+        <p class="perf__label">GDDR6X メモリ</p>
+      </div>
+      <div class="perf__stat">
+        <div class="perf__num" data-count-to="16384" data-suffix="">0</div>
+        <p class="perf__label">CUDA コア数</p>
+      </div>
+      <div class="perf__stat">
+        <div class="perf__num" data-count-to="2.52" data-suffix=" GHz" data-decimals="2">0 GHz</div>
+        <p class="perf__label">ブースト クロック</p>
+      </div>
+      <div class="perf__stat">
+        <div class="perf__num" data-count-to="1008" data-suffix=" GB/s">0 GB/s</div>
+        <p class="perf__label">メモリ帯域幅</p>
+      </div>
+      <div class="perf__stat">
+        <div class="perf__num" data-count-to="450" data-suffix="W">0W</div>
+        <p class="perf__label">総合グラフィックス電力</p>
+      </div>
+      <div class="perf__stat">
+        <div class="perf__num perf__num--text">Ada Lovelace</div>
+        <p class="perf__label">GPU アーキテクチャ</p>
+      </div>
+    </div>
+    <div class="perf__bars" aria-hidden="true">
+      <div class="perf__bar"><i style="--h:100%"></i><span>RTX 4090</span></div>
+      <div class="perf__bar"><i style="--h:62%"></i><span>RTX 4080</span></div>
+      <div class="perf__bar"><i style="--h:38%"></i><span>RTX 4070</span></div>
+    </div>
+    <p class="perf__note">※ 相対的な性能比較はタイトル・解像度・設定により変動します。数値はNVIDIA公表スペックに基づく代表値です。</p>
+  </section>
+
+  <!-- ============ 08 ARCHITECTURE ============ -->
+  <section class="arch" id="architecture">
+    <div class="arch__bg"></div>
+    <div class="section-head">
+      <p class="section-tag">08 — ARCHITECTURE</p>
+      <h2 class="section-title">チップの中で、何が起きているか。</h2>
+      <p class="section-desc">Ada Lovelaceアーキテクチャは、第3世代RTコアと第4世代Tensorコアを新設計のSMに統合する。</p>
+    </div>
+    <div class="arch__scene">
+      <svg class="arch__die" viewBox="0 0 600 600" id="archDie">
+        <g id="archGrid"></g>
+        <g id="archNodes"></g>
+      </svg>
+      <div class="arch__legend">
+        <div><i class="dot dot--lime"></i>SM クラスタ</div>
+        <div><i class="dot dot--violet"></i>RT コア</div>
+        <div><i class="dot dot--cyan"></i>Tensor コア</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 RAY TRACING ============ -->
+  <section class="rt" id="raytracing">
+    <div class="rt__bg"></div>
+    <div class="section-head section-head--left">
+      <p class="section-tag">09 — RAY TRACING</p>
+      <h2 class="section-title">光を、計算する。</h2>
+      <p class="section-desc">第3世代RTコアが、反射・屈折・影を物理的な光の振る舞いとして描き出す。</p>
+    </div>
+    <div class="rt__scene">
+      <svg class="rt__rays" viewBox="0 0 800 500" id="rtRays" preserveAspectRatio="xMidYMid slice">
+        <circle class="rt__source" cx="80" cy="80" r="10"/>
+      </svg>
+    </div>
+
+    <div class="rt__compare" id="rtCompare">
+      <div class="rt__compare-panel rt__compare-panel--on"><span class="rt__compare-label rt__compare-label--on">RT ON</span></div>
+      <div class="rt__compare-panel rt__compare-panel--off" id="rtCompareOff"><span class="rt__compare-label rt__compare-label--off">RT OFF</span></div>
+      <div class="rt__compare-handle" id="rtCompareHandle" aria-hidden="true"></div>
+      <input type="range" min="0" max="100" value="50" id="rtCompareSlider" class="rt__compare-slider" aria-label="レイトレーシング ON/OFF比較スライダー">
+    </div>
+    <p class="rt__compare-note">スライダーで比較 — 演出用のデモです。実際の見え方はタイトル・設定により異なります。</p>
+  </section>
+
+  <!-- ============ 10 AI / DLSS ============ -->
+  <section class="dlss" id="dlss">
+    <div class="dlss__bg"></div>
+    <div class="section-head">
+      <p class="section-tag">10 — AI / DLSS</p>
+      <h2 class="section-title">データが、映像へ変わる。</h2>
+      <p class="section-desc">第4世代Tensorコアが、DLSS 3のフレーム生成とAI超解像を支える。</p>
+    </div>
+    <div class="dlss__scene">
+      <canvas id="dlssCanvas" class="dlss__canvas"></canvas>
+      <div class="dlss__frame">
+        <span class="dlss__frame-tag dlss__frame-tag--left">DATA</span>
+        <span class="dlss__frame-tag dlss__frame-tag--mid">AI PROCESSING</span>
+        <span class="dlss__frame-tag dlss__frame-tag--right">高精細フレーム</span>
+      </div>
+    </div>
+
+    <div class="dlss__hud" id="dlssHud">
+      <button class="dlss__hud-toggle" id="dlssToggle" aria-pressed="false" type="button">
+        <span class="dlss__hud-toggle-label">DLSS 3</span>
+        <span class="dlss__hud-toggle-state" id="dlssToggleState">OFF</span>
+      </button>
+      <div class="dlss__hud-fps">
+        <span class="dlss__hud-fps-num" id="dlssFpsNum">62</span>
+        <span class="dlss__hud-fps-unit">FPS</span>
+      </div>
+      <p class="dlss__hud-note">※ フレーム生成の効果を示すコンセプトデモです。実測ベンチマーク値ではありません。</p>
+    </div>
+  </section>
+
+  <!-- ============ 11 HARDWARE (big photo intro + exploded view) ============ -->
+  <section class="hw-photo" id="hardware">
+    <div class="hw-photo__bg" data-img="hardwareBg"></div>
+    <div class="hw-photo__scrim"></div>
+    <div class="hw-photo__content">
+      <p class="section-tag section-tag--center">11 — HARDWARE</p>
+      <h2 class="hw-photo__title">THE HARDWARE</h2>
+      <p class="hw-photo__desc">トリプルファン、大型ベイパーチャンバー、金属バックプレート。冷却と静音を両立する構造。</p>
+    </div>
+  </section>
+
+  <section class="hw" id="hardware-detail">
+    <div class="hw__bg"></div>
+    <div class="hw__exploded" id="hwExploded">
+      <div class="hw__layer hw__layer--back"><span>バックプレート</span></div>
+      <div class="hw__layer hw__layer--pcb"><span>基板 / VRM</span></div>
+      <div class="hw__layer hw__layer--heatsink"><span>ベイパーチャンバー & ヒートシンク</span></div>
+      <div class="hw__layer hw__layer--shroud">
+        <div class="hw__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="hw__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="hw__fan"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <span class="hw__layer-tag">シュラウド / トリプルファン</span>
+      </div>
+    </div>
+
+    <div class="hw__detail-photo">
+      <div class="hw__detail-img" data-img="gpuDetail2"></div>
+      <div class="hw__detail-text">
+        <p class="section-tag">参考ディテール</p>
+        <p>実機GPUのファン・ヒートシンク構造を撮影した参考写真です。RTX 4090の公式パッケージ写真ではなく、質感・冷却機構の参考として掲載しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <p class="section-tag">12 — GALLERY</p>
+      <h2 class="section-title">質感を、見る。</h2>
+      <p class="section-desc">クリックすると拡大表示できます。</p>
+    </div>
+    <div class="gallery__grid" id="galleryGrid">
+      <figure class="gallery__item gallery__item--large" data-caption="回路基板のクローズアップ">
+        <div class="gallery__img" data-img="galleryCircuit"></div>
+        <figcaption>回路基板のクローズアップ</figcaption>
+      </figure>
+      <figure class="gallery__item" data-caption="実機GPU クローズアップ（参考写真）">
+        <div class="gallery__img" data-img="gpuDetail1"></div>
+        <figcaption>実機GPU クローズアップ</figcaption>
+      </figure>
+      <figure class="gallery__item" data-caption="マザーボード & 配線">
+        <div class="gallery__img" data-img="galleryMobo"></div>
+        <figcaption>マザーボード & 配線</figcaption>
+      </figure>
+      <figure class="gallery__item" data-caption="RGB照明のPCビルド">
+        <div class="gallery__img" data-img="galleryRgbPc"></div>
+        <figcaption>RGB照明のPCビルド</figcaption>
+      </figure>
+      <figure class="gallery__item" data-caption="実機GPU ファン・ヒートシンク（参考写真）">
+        <div class="gallery__img" data-img="gpuDetail2"></div>
+        <figcaption>ファン & ヒートシンク</figcaption>
+      </figure>
+      <figure class="gallery__item gallery__item--wide" data-caption="データフローのアブストラクト">
+        <div class="gallery__img" data-img="galleryAbstract"></div>
+        <figcaption>データフローのアブストラクト</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="閉じる">✕</button>
+    <div class="lightbox__img" id="lightboxImg"></div>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- ============ CTA / FOOTER ============ -->
+  <section class="cta" id="cta">
+    <div class="cta__bg"></div>
+    <h2 class="cta__title">THE POWER WITHIN</h2>
+    <p class="cta__desc">GeForce RTX 4090 — Ada Lovelaceが解き放つ、次世代のリアルタイム描画。</p>
+    <div class="cta__actions">
+      <a href="#performance" class="btn btn--primary" data-scroll>スペックを見る</a>
+      <a href="#gallery" class="btn btn--ghost" data-scroll>ギャラリーへ</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <a href="#top" class="footer__logo" data-scroll>RTX 4090</a>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#unboxing" data-scroll>開封</a>
+        <a href="#build" data-scroll>組み込み</a>
+        <a href="#performance" data-scroll>性能</a>
+        <a href="#architecture" data-scroll>アーキテクチャ</a>
+        <a href="#raytracing" data-scroll>レイトレーシング</a>
+        <a href="#dlss" data-scroll>AI / DLSS</a>
+        <a href="#hardware" data-scroll>ハードウェア</a>
+        <a href="#gallery" data-scroll>ギャラリー</a>
+      </nav>
+    </div>
+    <p class="footer__note">本サイトは制作デモです。仕様値はNVIDIA公表情報に基づく代表値。GPU本体・箱・ケーブル・モニターはCSS/SVGによるオリジナル造形です。「参考写真」表記のある実写真は、RTX 4090の公式パッケージ写真ではなく、ライセンスを確認済みの一般的なGPU/PC写真（Unsplashライセンス）です。画像は <code>assets/images/</code> にファイルを置き、script.js冒頭の IMAGES 設定のパスを差し替えることで、お手元の実機写真に置き換えられます。背景写真クレジットは script.js 冒頭のコメントを参照。</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
